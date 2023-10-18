@@ -1,0 +1,13 @@
+.pointer {
+    cursor: pointer,
+}
+
+.pointer:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0588d3;
+}
+
+.bc {
+    margin-bottom: 1rem;
+}

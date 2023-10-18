@@ -1,22 +1,53 @@
-import React from 'react';
-import './ListaItens.css';
+import React, { useEffect, useState } from 'react';
+import { Table } from 'reactstrap';
 
-export default function ListaItens(props) {
+export default function ListaItens({lista, setSelecionado}) {
+    const [sortedList, setSortedList] = useState([]);
+
+    const [sortType, setSortType] = useState('');
+    
+    useEffect(() => {
+        setSortedList(sortList(sortType));
+
+    }, [lista, sortType])
+
+    function sortList(type) {
+        console.log(sortedList)
+        const newSortedList = [...lista];
+
+        if (type === 'az') newSortedList.sort();
+        else if (type === 'za') newSortedList.sort().reverse();
+
+        return newSortedList;
+    }
+    
     return (
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th>Nome:</th>
-                </tr>
-            </thead>
-            <tbody>
-                {props.lista.map((item, index) => (
-                    <tr key={index}>
-                        <td>{item}</td>
+        <div>
+            <Table bordered hover striped>
+                <thead>
+                    <tr>
+                        <th>Nome:</th>
                     </tr>
-                ))}
-            </tbody>
-
-        </table>
+                </thead>
+                <tbody>
+                    {sortedList.map((item, index) => (
+                        <tr key={index} onClick={e => setSelecionado(prevSelecionado => {
+                            const newSelecionado = [...prevSelecionado];
+                            newSelecionado.push(e.target.innerHTML);
+                            return newSelecionado;
+                        })}>
+                            <td>{item}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+            {/* <select
+                onChange={e => setSortType(e.target.value)}
+            >
+                <option value=""></option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+            </select> */}
+        </div>
     )
 }
