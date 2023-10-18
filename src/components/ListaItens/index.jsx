@@ -13,7 +13,6 @@ export default function ListaItens({lista, setSelecionado}) {
     }, [lista, sortType])
 
     function sortList(type) {
-        console.log(sortedList)
         const newSortedList = [...lista];
 
         if (type === 'az') newSortedList.sort();
