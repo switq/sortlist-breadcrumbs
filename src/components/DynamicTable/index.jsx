@@ -10,10 +10,16 @@ function DynamicTable() {
   ]);
 
   function sortTable(atr) {
-    setData(prevData => {
-        const newData = [...prevData];
-        newData.sort((a, b) => (a[atr] < b[atr] ? -1 : a[atr] < b[atr] ? 1 : 0));
-        if (JSON.stringify(prevData) === JSON.stringify(newData)) newData.reverse();
+    // função para alterar o valor state data
+    setData(prevData => { 
+        const newData = [...prevData]; // cópia de data
+
+        // ordenação com base no titulo (atr) da coluna passada
+        newData.sort((a, b) => (a[atr] < b[atr] ? -1 : a[atr] < b[atr] ? 1 : 0)); 
+        
+        // comparação da data antiga e a nova, se forem iguais, inverte a tabela (de A-Z para Z-A ou vise e versa)
+        if (JSON.stringify(prevData) === JSON.stringify(newData)) newData.reverse(); 
+        
         return newData;
     })
   }

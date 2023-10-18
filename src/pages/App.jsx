@@ -14,7 +14,7 @@ const dept = {
   livros: 
     {
       terror: {'It a coisa': {}, 'O vilarejo': {}, 'Frankenstein': {}, 'O exorcista': {}, 'O cemitério': {}, 'Coraline': {}},
-      romance: {'A culpa é das estrelas': {}, 'Amor e gelato': {}, 'Ugly Love': {}, 'Toodas as suas (im)perfeições': {}, 'Todo esse tempo': {}},
+      romance: {'A culpa é das estrelas': {}, 'Amor e gelato': {}, 'Ugly Love': {}, 'Todas as suas (im)perfeições': {}, 'Todo esse tempo': {}},
       mangá: {'Chainsaw Man': {}, 'One Piece': {}, 'Boku no Hero': {}, 'Naruto': {}, 'Blue Lock': {}, 'Jujutsu no kaisen': {}, 'Bleach': {}},
     },
   eletrônicos: 
