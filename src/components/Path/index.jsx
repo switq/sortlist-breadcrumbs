@@ -18,19 +18,18 @@ export default function Path({selecionado, setSelecionado}) {
 
     return (
         <div className='bc'>
-            <span className='pointer' onClick={e => setSelecionado([])}>departamento </span>
+            <span className='pointer' onClick={e => setSelecionado([])}>departamentos </span>
             {caminho.map((item, index) => (
-                <>
+                <span key={index}>
                     <span>{'> '}</span>
                     <span
                     className='pointer'
-                    key={index}
                     onClick={e => handleUpdatePath(index)}
                     >
                         {item}
                     </span>
                     <span>{' '}</span>
-                </>
+                </span>
                 
             ))}
         </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'reactstrap';
+import './ListaItens.css';
 
 export default function ListaItens({lista, setSelecionado}) {
     const [sortedList, setSortedList] = useState([]);
@@ -36,7 +37,7 @@ export default function ListaItens({lista, setSelecionado}) {
                             newSelecionado.push(e.target.innerHTML);
                             return newSelecionado;
                         })}>
-                            <td>{item}</td>
+                            <td className='pointer'>{item}</td>
                         </tr>
                     ))}
                 </tbody>
